@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, distance_from_city_center: float = 0.0, clean_power: float = 0.0, average_rating: float = 0.0, count_of_ratings: int = 0):
+    def __init__(self, comfort_class: int, clean_mark: int, brand: str):
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
@@ -36,4 +36,3 @@ class CarWashStation:
         total_rating = self.average_rating * self.count_of_ratings + rate
         self.count_of_ratings += 1
         self.average_rating = round(total_rating / self.count_of_ratings, 1)
-        
