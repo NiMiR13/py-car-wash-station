@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, comfort_class: int, clean_mark: int, brand: str):
+    def __init__(self, distance_from_city_center: float = 0.0, clean_power: float = 0.0, average_rating: float = 0.0, count_of_ratings: int = 0):
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
