@@ -10,7 +10,7 @@ class Car:
 
 
 class CarWashStation:
-    def __init__(  # строка 6 — теперь 79 символов ровно!
+    def __init__(
         self,
         distance_from_city_center: float,
         clean_power: float,
@@ -31,10 +31,8 @@ class CarWashStation:
         return round(income, 1)
 
     def calculate_washing_price(self, car: Car) -> float:
-        price = car.comfort_class
-        price *= (self.clean_power - car.clean_mark)
-        price *= self.average_rating
-        price /= self.distance_from_city_center
+        price = car.comfort_class * (self.clean_power - car.clean_mark)
+        price = price * self.average_rating / self.distance_from_city_center
         return round(price, 1)
 
     def wash_single_car(self, car: Car) -> None:
@@ -45,4 +43,3 @@ class CarWashStation:
         total = self.average_rating * self.count_of_ratings + rating
         self.count_of_ratings += 1
         self.average_rating = round(total / self.count_of_ratings, 1)
-        
