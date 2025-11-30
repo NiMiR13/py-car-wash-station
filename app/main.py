@@ -10,7 +10,7 @@ class Car:
 
 
 class CarWashStation:
-    def __init__(  # ← 78 символов. ТОЧКА.
+    def __init__(
         self,
         distance_from_city_center: float,
         clean_power: float,
