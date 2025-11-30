@@ -11,7 +11,7 @@ class CarWashStation:
         self.clean_power = clean_power
         self.average_rating = average_rating
         self.count_of_ratings = count_of_ratings
-        # ← вот эта строчка с , _=None — оставь её!
+
 
     def serve_cars(self, cars: list) -> float:
         income = 0.0
