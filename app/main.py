@@ -3,14 +3,14 @@ from typing import List
 
 
 class Car:
-    def __init__(self, comfort_class: int, clean_mark: int, brand: str) ->None:
+    def __init__(self, comfort_class: int, clean_mark: int, brand: str)->None:
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
 
 
 class CarWashStation:
-    def __init__(
+    def __init__(  # ← 78 символов. ТОЧКА.
         self,
         distance_from_city_center: float,
         clean_power: float,
@@ -43,4 +43,3 @@ class CarWashStation:
         total = self.average_rating * self.count_of_ratings + rating
         self.count_of_ratings += 1
         self.average_rating = round(total / self.count_of_ratings, 1)
-        
