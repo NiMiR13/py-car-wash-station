@@ -6,7 +6,7 @@ class Car:
 
 
 class CarWashStation:
-    def __init__(self, distance_from_city_center: float = 0.0, clean_power: float = 0.0, average_rating: float = 0.0, count_of_ratings: int = 0):
+    def __init__(self, distance_from_city_center: float, clean_power: float, average_rating: float, count_of_ratings: int, _=None):
         self.distance_from_city_center = distance_from_city_center
         self.clean_power = clean_power
         self.average_rating = average_rating
@@ -19,13 +19,14 @@ class CarWashStation:
                 income += self.calculate_washing_price(car)
                 self.wash_single_car(car)
         return round(income, 1)
-        
-    def calculate_washing_price(self, car: Car) -> float:
-        rating_factor = self.average_rating / 3
-        distance_factor = self.distance_from_city_center / 5
 
-    # Новая формула, использующая факторы для совместимости
-        price = car.comfort_class * (self.clean_power - car.clean_mark) * rating_factor / distance_factor
+    def calculate_washing_price(self, car: Car) -> float:
+        price = (
+            car.comfort_class
+            * (self.clean_power - car.clean_mark)
+            * self.average_rating
+            / self.distance_from_city_center
+        )
         return round(price, 1)
 
     def wash_single_car(self, car: Car):
