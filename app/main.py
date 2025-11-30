@@ -3,7 +3,7 @@ from typing import List
 
 
 class Car:
-    def init(
+    def __init__(
             self,
             comfort_class: int,
             clean_mark: int,
